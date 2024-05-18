@@ -1,0 +1,6 @@
+@DotnetTalkChatGPT_HostAddress = http://localhost:5198
+
+GET {{DotnetTalkChatGPT_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
