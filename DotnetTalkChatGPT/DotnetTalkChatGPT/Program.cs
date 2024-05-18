@@ -1,4 +1,12 @@
+using DotnetTalkChatGPT.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+
+//Carregando infos de configuração do chatgpt
+builder.AddChatGpt(builder.Configuration);
+
 
 // Add services to the container.
 
