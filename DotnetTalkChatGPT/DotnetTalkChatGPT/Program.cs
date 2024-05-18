@@ -13,14 +13,15 @@ builder.AddSerilog(builder.Configuration, appName);
 builder.AddChatGpt(builder.Configuration);
 
 
-
+//Os valores enviados na url passarão para lowerCase
+builder.Services.AddRouting(options => options.LowercaseUrls = true);
 builder.Services.AddControllers();
 
 //Configurando swagger
 builder.Services.AddSwagger(builder.Configuration);
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
 
 var app = builder.Build();
 

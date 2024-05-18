@@ -7,9 +7,8 @@ namespace DotnetTalkChatGPT.Controllers;
 
 
 
-[ApiController]
 [Route("/api/v1/[controller]")]
-public class ChatController : ControllerBase
+public class ChatController : Controller
 {
 
     private readonly OpenAIAPI _chatGpt;
@@ -31,7 +30,7 @@ public class ChatController : ControllerBase
         var completion = new CompletionRequest
         {
             Prompt = prompt,
-            Model = Model.ChatGPTTurbo,
+            Model = Model.DavinciText,
             MaxTokens = 200
         };
 

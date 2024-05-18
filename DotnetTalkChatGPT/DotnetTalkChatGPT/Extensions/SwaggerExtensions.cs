@@ -38,11 +38,13 @@ public static class SwaggerExtensions
     
     public static void UseSwaggerDoc(this IApplicationBuilder app, string appName)
     {
+        //Buscando versao
+        string version = Assembly.GetEntryAssembly().GetName().Version.ToString();
 
         app.UseSwagger();
         app.UseSwaggerUI(c =>
         {
-            c.SwaggerEndpoint("/swagger/v1/swagger.json", appName);
+            c.SwaggerEndpoint($"/swagger/{version}/swagger.json", appName);
             c.RoutePrefix = "swagger";
         });
 
